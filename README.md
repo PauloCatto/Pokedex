@@ -1,9 +1,6 @@
 <br>
 <h3> Projeto Pokedex desenvolvido em Angular consumindo a Api pokemons.</h3>
-<br>
 <hr>
-https://paulocatto.github.io/Pokedex-Angular/
-<br>
 <br>
 
 ![Captura de Tela (117)](https://github.com/PauloCatto/Pokedex-Angular/assets/108766424/8c7fc3d7-af5a-44fb-840a-b8e0631821cb)
