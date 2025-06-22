@@ -1,44 +1,36 @@
-<main>
-  <ng-container *ngIf="!isLoading && pokemon.length; else loadingOrError">
-    <section class="pokemon__names">
-      <h1 class="slideInLeft">{{ pokemon[0]?.name }}</h1>
-      <h2 class="slideInRight">{{ pokemon[1]?.names[0]?.name }}</h2>
-    </section>
+<main *ngIf="!isLoading && pokemon.length; else loadingOrError">
+  <!-- Botão Voltar no topo -->
+  <a [routerLink]="['']" class="btn-back" [@fadeInSlide]> ← Voltar </a>
 
-    <section class="pokemon__status">
-      <img
-        *ngIf="pokemon[0]?.sprites?.other?.dream_world?.front_default"
-        [src]="pokemon[0].sprites.other.dream_world.front_default"
-        [alt]="pokemon[0]?.name"
-        class="slideInDown"
-      />
+  <!-- Nome do Pokémon -->
+  <section class="pokemon-header" [@fadeInSlide]>
+    <h1>{{ pokemon[0]?.name }}</h1>
+  </section>
 
-      <article class="pokemon__status__statistics fadeIn">
-        <section>
-          <h3>Estatísticas</h3>
-
-          <ol>
-            <li *ngFor="let value of pokemon[0]?.stats">
-              {{ value.stat.name }}
-
-              <strong>
-                {{ value.base_stat }}
-              </strong>
-            </li>
-          </ol>
-        </section>
-
-        <a [routerLink]="['']" class="btn btn__secondary"> Voltar </a>
-      </article>
-    </section>
-  </ng-container>
-
-  <ng-template #loadingOrError>
+  <!-- Imagem do Pokémon -->
+  <section class="pokemon-image" [@zoomIn]>
     <img
-      *ngIf="apiError"
-      src="../../../assets/error.png"
-      alt="Deu erro na mostragem do pokemon"
-      width="100%"
+      *ngIf="pokemon[0]?.sprites?.other?.dream_world?.front_default"
+      [src]="pokemon[0].sprites.other.dream_world.front_default"
+      [alt]="pokemon[0]?.name"
     />
-  </ng-template>
+  </section>
+
+  <!-- Estatísticas -->
+  <section class="pokemon-stats" [@listStagger]>
+    <h2>Estatísticas</h2>
+    <ul>
+      <li *ngFor="let stat of pokemon[0]?.stats">
+        <span>{{ stat.stat.name }}</span>
+        <strong>{{ stat.base_stat }}</strong>
+      </li>
+    </ul>
+  </section>
 </main>
+
+<ng-template #loadingOrError>
+  <div class="error-state">
+    <img src="../../../assets/error.png" alt="Erro ao carregar Pokémon" />
+    <p>Erro ao carregar os dados do Pokémon.</p>
+  </div>
+</ng-template>

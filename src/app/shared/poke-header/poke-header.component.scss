@@ -3,9 +3,55 @@
 :host {
   header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
-    padding: rem-calc(40) 0;
+    padding: rem-calc(16) rem-calc(10);
+    background-color: #ffffff;
+    box-shadow: 0 rem-calc(1) rem-calc(4) rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid #e0e0e0;
+
+    .logo {
+      width: rem-calc(90);
+      height: auto;
+      margin-bottom: rem-calc(6);
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    .title {
+      font-size: rem-calc(18);
+      font-weight: 600;
+      color: var(--primary-color);
+      margin: 0;
+      letter-spacing: rem-calc(0.5);
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: rem-calc(12);
+      color: #888;
+      margin-top: rem-calc(2);
+    }
+
+    @media (max-width: 600px) {
+      padding: rem-calc(12) rem-calc(8);
+
+      .logo {
+        width: rem-calc(70);
+      }
+
+      .title {
+        font-size: rem-calc(16);
+      }
+
+      .subtitle {
+        font-size: rem-calc(11);
+      }
+    }
   }
 }

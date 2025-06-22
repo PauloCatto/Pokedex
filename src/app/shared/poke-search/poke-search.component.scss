@@ -3,24 +3,59 @@
 :host {
   form {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(93% - 2rem);
-    padding: rem-calc(12) rem-calc(10);
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: rem-calc(10);
+    width: 90%;
+    max-width: rem-calc(500);
+    margin: rem-calc(20) auto;
+    padding: rem-calc(8) rem-calc(12);
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: rem-calc(30);
+    box-shadow: 0 rem-calc(2) rem-calc(6) rgba(0, 0, 0, 0.1);
 
     input {
-      width: 100%;
-      background: none;
+      flex: 1;
+      background: transparent;
       border: none;
-      font-size: rem-calc(18);
+      outline: none;
+      font-size: rem-calc(16);
       color: var(--branco);
+      padding: rem-calc(8) rem-calc(10);
 
       &::placeholder {
-        color: var(--branco);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    img {
+      width: rem-calc(20);
+      height: rem-calc(20);
+      margin-left: rem-calc(10);
+      opacity: 0.8;
+      cursor: pointer;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      width: 95%;
+      margin: rem-calc(15) auto;
+
+      input {
+        font-size: rem-calc(14);
+      }
+
+      img {
+        width: rem-calc(18);
+        height: rem-calc(18);
       }
     }
   }
