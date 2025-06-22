@@ -14,8 +14,12 @@ Uma aplicação web criada com Angular que permite explorar uma lista de Pokémo
 - ✅ Layout responsivo.
 - ✅ Navegação por rotas.
 
-> Em breve: Testes unitários serão criados para aumentar a cobertura de código. ✅
-
+> Em breve:
+> <br>
+- ✅ Testes unitários serão criados para aumentar a cobertura de código.
+<br>
+- ✅ Deploy da aplicação para acesso público será realizado.
+<br>
 ---
 
 ## 🛠️ Requisitos
