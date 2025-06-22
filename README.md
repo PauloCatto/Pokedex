@@ -1,43 +1,80 @@
-# Pokédex Angular
+# Pokédex Angular 🎮
 
-Bem-vindo ao **Pokédex Angular**, uma aplicação desenvolvida com Angular que permite explorar uma lista de Pokémon. A aplicação mostra informações detalhadas sobre cada Pokémon, fornecendo uma experiência interativa e informativa para os fãs da série.
+Uma aplicação web criada com Angular que permite explorar uma lista de Pokémons e visualizar detalhes de cada um. A Pokédex consome os dados da [PokéAPI](https://pokeapi.co/), exibindo imagens, tipos, status e outras informações de forma interativa.
+
+---
+
+## 🚀 Funcionalidades
+
+- ✅ Listagem de Pokémons com nome e tipos.
+- ✅ Filtro de busca por nome.
+- ✅ Tela de detalhes de cada Pokémon com informações completas.
+- ✅ Animações de entrada (fade, slide e zoom) usando Angular Animations.
+- ✅ Tratamento de erros ao consumir a API.
+- ✅ Layout responsivo.
+- ✅ Navegação por rotas.
+
+> Em breve: Testes unitários serão criados para aumentar a cobertura de código. ✅
+
+---
 
 ## 🛠️ Requisitos
 
-- **Node.js**: Recomenda-se a versão 14.x ou 16.x.
+- **Node.js**: Versão recomendada 14.x ou 16.x
 - **Angular CLI**: Versão 16.0.3
 
-## 🚀 Instalação
+---
 
-Para começar a usar a aplicação, siga estes passos:
+## ⚙️ Instalação e Execução Local
 
-1. **Instale as dependências do projeto**:
+1. **Clone o repositório:**
 
-    npm install
-
-2. **Instale o Angular CLI ** (se ainda não o tiver):
-
-    npm install -g @angular/cli@16.0.3
-
-## ⚙️ Executando o Projeto
-
-Para iniciar o servidor de desenvolvimento e ver a aplicação no navegador, execute:
-
+git clone https://github.com/PauloCatto/Pokedex.git
+<br>
+Instale as dependências:
+<br>
+npm install
+<br>
+npm install -g @angular/cli@16.0.3
+<br>
+<br>
 ng serve -o
-
-<hr>
 <br>
+A aplicação abrirá automaticamente em:
+http://localhost:4200
 
+📚 Principais Boas Práticas Utilizadas
+✅ Tratamento de erros nas requisições HTTP
+Implementação de tratamentos para capturar e exibir mensagens de erro amigáveis caso a API falhe.
 
-![Captura de Tela (117)](https://github.com/PauloCatto/Pokedex-Angular/assets/108766424/8c7fc3d7-af5a-44fb-840a-b8e0631821cb)
+✅ Uso de programação reativa com RxJS (forkJoin, finalize)
+Uso de operadores RxJS como forkJoin para chamadas paralelas de API e finalize para controlar o estado de carregamento.
 
+✅ Comunicação entre componentes com Output e EventEmitter
+A comunicação entre componentes (exemplo: busca → lista) foi feita utilizando @Output e EventEmitter, garantindo baixo acoplamento.
 
-<br>
-<br>
+✅ Prevenção de erros nos templates com Safe Navigation (?.)
+Uso constante do operador de navegação segura (?.) para evitar erros de template quando os dados ainda não foram carregados.
 
-![Captura de Tela (116)](https://github.com/PauloCatto/Pokedex-Angular/assets/108766424/3c7ff12a-8f06-4a4d-964b-70cb4f80b3cc)
+✅ Filtro de dados seguro e performático
+A busca de Pokémons é feita com filtros controlados, evitando manipulação direta dos arrays principais.
 
-<br>
-<br>
+✅ Animações com Angular Animations
+Animações declarativas Angular (ex.: fadeIn, slideIn, zoomIn) aplicadas para dar mais fluidez à experiência do usuário.
 
-![Captura de Tela (115)](https://github.com/PauloCatto/Pokedex-Angular/assets/108766424/05494bf7-c935-4d8f-8f4e-e8c917ed6ff3)
+🧪 Testes Unitários
+Em breve será iniciada a cobertura de testes unitários para todos os componentes e serviços, seguindo as boas práticas do Angular com Jasmine e Karma.
+
+📄 Tecnologias Utilizadas
+Angular 16
+
+TypeScript
+
+RxJS
+
+Angular Animations
+
+SCSS com uso de rem-calc
+
+PokéAPI (https://pokeapi.co/)
+
